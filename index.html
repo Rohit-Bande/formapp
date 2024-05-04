@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        section{
+            background-color: aquamarine;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        input{
+            padding: 10px;
+            margin: 20px 0;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 400;
+            text-transform: capitalize;
+        }
+
+        p{
+            margin: 20px 0;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 400;
+            text-transform: capitalize;
+            background-color: bisque;
+            padding: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <input 
+        type="text"
+        id="myInput"
+        name="user name"
+        placeholder="type somthing ..."
+        autocomplete="off"
+        />
+
+        <div class="output">
+            <p class="inputValue">input value</p>
+            <p class="inputName">Inpit name</p>
+            <p class="inputType">input type</p>
+            <p class="eventType">Event type</p>
+        </div>
+    </section>
+
+    <script>
+        const inputElem = document.getElementById('myInput');
+
+        const handleInput = (event) => {
+            console.log(event);
+
+            document.querySelector(".inputValue").textContent = `Input Value : ${event.target.value}`;
+            document.querySelector(".inputName").textContent = `Input Name : ${event.target.event}`;
+            document.querySelector(".inputType").textContent = `Input Type : ${event.inputType}`;
+            document.querySelector(".eventType").textContent = `event Name : ${event.type}`;
+
+            // console.log("input value :", event.target.value);
+            // console.log("input name :", event.target.name);
+            // console.log("input type :", event.target.type);
+            // console.log("event type :", event.type);
+        }
+
+        inputElem.addEventListener('change', handleInput)
+    </script>
+</body>
+</html>
